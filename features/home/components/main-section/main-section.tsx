@@ -1,6 +1,7 @@
 import React from 'react';
 import { View } from 'react-native';
 import FirstSection from './first-section/first-section';
+import FourthSection from './fourth-section/fourth-section';
 import SecondSection from './second-section/second-section';
 import ThirdSection from './third-section/third-section';
 
@@ -10,6 +11,7 @@ const MainSection = () => {
       <FirstSection />
       <SecondSection />
       <ThirdSection />
+      <FourthSection />
     </View>
   )
 }
