@@ -10,7 +10,7 @@ const data = [
 ];
 
 const { width: screenWidth } = Dimensions.get('window');
-const cardWidth = screenWidth / 3.5;
+const cardWidth = screenWidth / 3.2;
 
 const SecondSection = () => {
     return (
@@ -20,8 +20,8 @@ const SecondSection = () => {
                 data={data}
                 keyExtractor={(item) => item.id.toString()}
                 renderItem={({ item }) => (
-                    <View style={{ width: cardWidth, paddingHorizontal: 4, paddingVertical: 6 }}>
-                        <MiniCard title={item.title} imgSource={item.imgSource} />
+                    <View style={{ width: cardWidth, marginHorizontal: 9, marginVertical: 9 }}>
+                        <MiniCard title={item.title} imgSource={item.imgSource} className='pb-8' />
                     </View>
                 )}
                 showsHorizontalScrollIndicator={false}
