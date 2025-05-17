@@ -22,7 +22,7 @@ const SecondSection = () => {
                 data={data}
                 keyExtractor={(item) => item.id.toString()}
                 renderItem={({ item }) => (
-                    <View style={{ width: cardWidth, marginHorizontal: 9, marginVertical: 9 }}>
+                    <View className='m-3' style={{ width: cardWidth}}>
                         <MiniCard title={item.title} imgSource={item.imgSource} className='pb-8' />
                     </View>
                 )}
