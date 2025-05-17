@@ -21,7 +21,7 @@ const SliderControls = ({ currentIndex, total, goToSlide }: Props) => {
         width: withTiming(activeIndex.value === index ? 24 : 12, { duration: 200 }), 
         backgroundColor: withTiming(activeIndex.value === index ? 'white' : 'rgba(255, 255, 255, 0.5)', { duration: 200 }), 
       };
-    }, [activeIndex]); 
+    }); 
   };
 
   return (

@@ -23,7 +23,7 @@ const HeaderSliderItem = ({
 
     useEffect(() => {
         if (isActive) {
-            textTranslateX.value = withDelay(50, withTiming(0, { duration: 200 }));
+            textTranslateX.value = withDelay(100, withTiming(0, { duration: 200 }));
             imageTranslateX.value = withDelay(100, withTiming(0, { duration: 200 }));
             opacity.value = withTiming(1, { duration: 200 });
         } else {

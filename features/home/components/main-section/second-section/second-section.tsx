@@ -7,6 +7,8 @@ const data = [
     { id: 2, title: 'Farmacias', imgSource: require('../../../../../assets/images/slider/farmacias-secondary.png') },
     { id: 4, title: 'Bodegas', imgSource: require('../../../../../assets/images/slider/drinks-secondary.png') },
     { id: 5, title: 'Café y Postres', imgSource: require('../../../../../assets/images/slider/cafe-secondary.png') },
+    {id: 6, title: 'Mascotas', imgSource: require('../../../../../assets/images/slider/mascotas-secondary.png') },
+    {id: 7, title: 'Tiendas', imgSource: require('../../../../../assets/images/slider/tiendas-secondary.png') },
 ];
 
 const { width: screenWidth } = Dimensions.get('window');
