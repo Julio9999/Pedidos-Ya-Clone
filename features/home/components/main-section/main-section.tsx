@@ -6,7 +6,7 @@ import FourthSection from './fourth-section/fourth-section';
 import SecondSection from './second-section/second-section';
 import ThirdSection from './third-section/third-section';
 
-const MainSection = () => {
+const MainSection = () => {  
   return (
     <View>
       <FirstSection />
@@ -18,4 +18,4 @@ const MainSection = () => {
   )
 }
 
-export default MainSection;
+export default React.memo(MainSection);

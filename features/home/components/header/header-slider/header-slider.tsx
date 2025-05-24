@@ -1,5 +1,5 @@
 import { SlideItemProps } from '@/features/home/interfaces/header/header.interface';
-import { useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { Dimensions, FlatList, NativeScrollEvent, NativeSyntheticEvent, View } from 'react-native';
 import HeaderSliderItem from './header-slider-item';
 import SliderControls from './slider-controls';
@@ -90,4 +90,4 @@ const HeaderSlider = () => {
     )
 }
 
-export default HeaderSlider;
+export default React.memo(HeaderSlider);
