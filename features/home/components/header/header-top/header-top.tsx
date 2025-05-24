@@ -12,30 +12,38 @@ import SearchBarComponent from '../search-bar/search-bar';
 
 interface Props {
     scrollY: SharedValue<number>;
+    showSearchBar: SharedValue<boolean>;
 }
 
-const HeaderRop = ({ scrollY }: Props) => {
+const HeaderRop = ({ scrollY, showSearchBar }: Props) => {
 
 
     const animatedSearchBar = useAnimatedStyle(() => {
-        const offset = scrollY.value >= 5 ? -100 : 80;
+        const visible = showSearchBar.value || scrollY.value < 5;
         return {
-            top: withTiming(offset, { duration: 300 }),
+            top: withTiming(visible ? 65 : -100, { duration: 250 }),
         };
     });
 
 
-    const animatedShadow = useAnimatedStyle(() => ({
-        shadowOpacity: scrollY.value >= 5 ? 0.3 : 0,
-        elevation: scrollY.value >= 5 ? 5 : 0,
-        shadowColor: '#000',
-        shadowRadius: 4,
-    }));
+    const animatedShadow = useAnimatedStyle(() => {
+        const isSearchVisible = showSearchBar.value || scrollY.value < 5;
+
+        return {
+            shadowOpacity: isSearchVisible ? 0 : 0.3,
+            elevation: isSearchVisible ? 0 : 5,
+            shadowColor: '#000',
+            shadowRadius: 4,
+            borderBottomLeftRadius: isSearchVisible ? 0 : 8,
+            borderBottomRightRadius: isSearchVisible ? 0 : 8,
+        };
+    });
+
 
 
     return (
         <>
-            <Animated.View className="px-5 z-10 absolute bg-pedidosYaRojo" style={animatedSearchBar}>
+            <Animated.View className="px-5 z-10 absolute bg-pedidosYaRojo py-2 pb-5 rounded-b-lg" style={animatedSearchBar}>
                 <SearchBarComponent />
             </Animated.View>
             <Animated.View
